@@ -27,49 +27,48 @@ namespace BurgerKiosk
 
         private void UpdateOrder()
         {
-            // 리스트박스와 합계 초기화
-            lstOrder.Items.Clear();
-            finalAmount = 0; // 클래스 변수인 finalAmount를 초기화
+            lblError.Text = "";
+            lstOrder.Items.Clear(); // 리스트박스 초기화는 유지 (안 쓰더라도 비워줌)
+            finalAmount = 0;
 
-            // 버거 선택 확인
+            // 버거 선택 확인 - 금액 계산만 남겨둡니다.
             if (rbBurger1.Checked)
             {
-                lstOrder.Items.Add("버거 1 : 5,000원");
+                // lstOrder.Items.Add("햄버거: 5,000원"); // 주석 처리
                 finalAmount += 5000;
             }
             else if (rbBurger2.Checked)
             {
-                lstOrder.Items.Add("버거 2 : 4,000원");
+                // lstOrder.Items.Add("불고기버거: 4,000원");
                 finalAmount += 4000;
             }
             else if (rbBurger3.Checked)
             {
-                lstOrder.Items.Add("버거 3 : 3,000원");
+                // lstOrder.Items.Add("치킨버거 : 3,000원");
                 finalAmount += 3000;
             }
 
-            // 추가 옵션 선택 확인
+            // 추가 옵션 선택 확인 - 금액 계산만 남겨둡니다.
             if (cbFries.Checked)
             {
-                lstOrder.Items.Add("+ 감자튀김 : 2,000원");
+                // lstOrder.Items.Add("+ 감자튀김 : 2,000원");
                 finalAmount += 2000;
             }
             if (cbCoke.Checked)
             {
-                lstOrder.Items.Add("+ 콜라 : 2,000원");
+                // lstOrder.Items.Add("+ 콜라 : 2,000원");
                 finalAmount += 2000;
             }
             if (cbCheese.Checked)
             {
-                lstOrder.Items.Add("+ 치즈 : 1,000원");
+                // lstOrder.Items.Add("+ 치즈 : 1,000원");
                 finalAmount += 1000;
             }
             if (cbSauce.Checked)
             {
-                lstOrder.Items.Add("+ 소스 : 1,000원");
+                // lstOrder.Items.Add("+ 소스 : 1,000원");
                 finalAmount += 1000;
             }
-
         }
 
         private void cbFries_CheckedChanged(object sender, EventArgs e)

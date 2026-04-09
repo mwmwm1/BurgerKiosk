@@ -206,9 +206,8 @@
             lblError.ForeColor = Color.Red;
             lblError.Location = new Point(23, 182);
             lblError.Name = "lblError";
-            lblError.Size = new Size(122, 15);
+            lblError.Size = new Size(0, 15);
             lblError.TabIndex = 2;
-            lblError.Text = "메뉴를 선택해주세요.";
             // 
             // lblTotal
             // 
