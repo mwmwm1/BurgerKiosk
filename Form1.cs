@@ -28,7 +28,7 @@ namespace BurgerKiosk
         private void UpdateOrder()
         {
             // 리스트박스와 합계 초기화
-            lstOrder.Items.Clear(); 
+            lstOrder.Items.Clear();
             finalAmount = 0; // 클래스 변수인 finalAmount를 초기화
 
             // 버거 선택 확인
@@ -103,7 +103,30 @@ namespace BurgerKiosk
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            if (!rbBurger1.Checked && !rbBurger2.Checked && !rbBurger3.Checked)
+            {
+                lblError.Text = "메뉴를 선택해주세요.";
+                lblTotal.Text = "총 금액: 0원";
+                return; // 아래 코드를 실행하지 않고 함수를 종료함
+            }
+
+            // 정상 선택된 경우 (에러 메시지 지우기)
+            lblError.Text = "";
+
+            // 최종 금액 표시
             lblTotal.Text = $"총 금액: {finalAmount:N0}원";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            rbBurger1.Checked = false;
+            rbBurger2.Checked = false;
+            rbBurger3.Checked = false;
+
+            // 리스트박스와 금액도 깨끗하게 비우기
+            lstOrder.Items.Clear();
+            finalAmount = 0;
+            lblTotal.Text = "총 금액: 0원";
         }
     }
 

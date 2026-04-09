@@ -42,6 +42,7 @@
             pictureBox2 = new PictureBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
+            lblError = new Label();
             lblTotal = new Label();
             lstOrder = new ListBox();
             btnOrder = new Button();
@@ -61,7 +62,6 @@
             rbBurger1.Name = "rbBurger1";
             rbBurger1.Size = new Size(104, 24);
             rbBurger1.TabIndex = 0;
-            rbBurger1.TabStop = true;
             rbBurger1.Text = "햄버거";
             rbBurger1.UseVisualStyleBackColor = true;
             rbBurger1.CheckedChanged += rbBurger1_CheckedChanged;
@@ -72,7 +72,6 @@
             rbBurger2.Name = "rbBurger2";
             rbBurger2.Size = new Size(114, 19);
             rbBurger2.TabIndex = 1;
-            rbBurger2.TabStop = true;
             rbBurger2.Text = "불고기버거";
             rbBurger2.UseVisualStyleBackColor = true;
             rbBurger2.CheckedChanged += rbBurger2_CheckedChanged;
@@ -83,7 +82,6 @@
             rbBurger3.Name = "rbBurger3";
             rbBurger3.Size = new Size(95, 19);
             rbBurger3.TabIndex = 2;
-            rbBurger3.TabStop = true;
             rbBurger3.Text = "치킨버거";
             rbBurger3.UseVisualStyleBackColor = true;
             rbBurger3.CheckedChanged += rbBurger3_CheckedChanged;
@@ -192,6 +190,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(lblError);
             groupBox3.Controls.Add(lblTotal);
             groupBox3.Controls.Add(lstOrder);
             groupBox3.Location = new Point(503, 90);
@@ -201,10 +200,20 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "주문 내역";
             // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.ForeColor = Color.Red;
+            lblError.Location = new Point(23, 182);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(122, 15);
+            lblError.TabIndex = 2;
+            lblError.Text = "메뉴를 선택해주세요.";
+            // 
             // lblTotal
             // 
             lblTotal.ForeColor = Color.Blue;
-            lblTotal.Location = new Point(23, 201);
+            lblTotal.Location = new Point(23, 209);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(194, 23);
             lblTotal.TabIndex = 1;
@@ -263,6 +272,7 @@
             Controls.Add(groupBox2);
             Name = "Form1";
             Text = "Burger Kiosk v1.0";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -270,6 +280,7 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,5 +305,6 @@
         private PictureBox pictureBox2;
         private ListBox lstOrder;
         private Label lblTotal;
+        private Label lblError;
     }
 }
