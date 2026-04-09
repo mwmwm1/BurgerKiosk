@@ -141,7 +141,7 @@
             groupBox1.Location = new Point(12, 90);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(246, 307);
-            groupBox1.TabIndex = 7;
+            groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "메뉴 선택";
             // 
@@ -184,7 +184,7 @@
             groupBox2.Location = new Point(264, 90);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(197, 249);
-            groupBox2.TabIndex = 8;
+            groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "추가 옵션";
             // 
@@ -196,7 +196,7 @@
             groupBox3.Location = new Point(503, 90);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(246, 235);
-            groupBox3.TabIndex = 9;
+            groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "주문 내역";
             // 
@@ -232,7 +232,7 @@
             btnOrder.Location = new Point(503, 348);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(134, 37);
-            btnOrder.TabIndex = 10;
+            btnOrder.TabIndex = 3;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
@@ -243,7 +243,7 @@
             btnReset.Location = new Point(651, 348);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(98, 37);
-            btnReset.TabIndex = 11;
+            btnReset.TabIndex = 4;
             btnReset.Text = "초기화";
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click;
@@ -260,6 +260,7 @@
             // 
             // Form1
             // 
+            AcceptButton = btnOrder;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);

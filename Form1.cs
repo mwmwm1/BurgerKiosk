@@ -34,39 +34,39 @@ namespace BurgerKiosk
             // 버거 선택 확인 - 금액 계산만 남겨둡니다.
             if (rbBurger1.Checked)
             {
-                // lstOrder.Items.Add("햄버거: 5,000원"); // 주석 처리
+                 lstOrder.Items.Add("햄버거: 5,000원"); // 주석 처리
                 finalAmount += 5000;
             }
             else if (rbBurger2.Checked)
             {
-                // lstOrder.Items.Add("불고기버거: 4,000원");
+                lstOrder.Items.Add("불고기버거: 4,000원");
                 finalAmount += 4000;
             }
             else if (rbBurger3.Checked)
             {
-                // lstOrder.Items.Add("치킨버거 : 3,000원");
+                lstOrder.Items.Add("치킨버거 : 3,000원");
                 finalAmount += 3000;
             }
 
             // 추가 옵션 선택 확인 - 금액 계산만 남겨둡니다.
             if (cbFries.Checked)
             {
-                // lstOrder.Items.Add("+ 감자튀김 : 2,000원");
+                lstOrder.Items.Add("+ 감자튀김 : 2,000원");
                 finalAmount += 2000;
             }
             if (cbCoke.Checked)
             {
-                // lstOrder.Items.Add("+ 콜라 : 2,000원");
+                lstOrder.Items.Add("+ 콜라 : 2,000원");
                 finalAmount += 2000;
             }
             if (cbCheese.Checked)
             {
-                // lstOrder.Items.Add("+ 치즈 : 1,000원");
+                lstOrder.Items.Add("+ 치즈 : 1,000원");
                 finalAmount += 1000;
             }
             if (cbSauce.Checked)
             {
-                // lstOrder.Items.Add("+ 소스 : 1,000원");
+                lstOrder.Items.Add("+ 소스 : 1,000원");
                 finalAmount += 1000;
             }
         }
@@ -121,6 +121,7 @@ namespace BurgerKiosk
             rbBurger1.Checked = false;
             rbBurger2.Checked = false;
             rbBurger3.Checked = false;
+            this.ActiveControl = rbBurger1;
 
             // 리스트박스와 금액도 깨끗하게 비우기
             lstOrder.Items.Clear();
