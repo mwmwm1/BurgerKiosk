@@ -26,7 +26,6 @@ namespace BurgerKiosk
             this.ActiveControl = rbBurger1;
             UpdateOrder();
             lblTotal.Text = "총 금액: 0원";
-
             rbBurger1.TabStop = true;
         }
 
