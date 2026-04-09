@@ -6,6 +6,13 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
+            this.Shown += (s, e) =>
+            {
+                rbBurger1.Checked = false;
+                rbBurger2.Checked = false;
+                rbBurger3.Checked = false;
+                rbBurger1.TabStop = true; 
+            };
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -16,8 +23,11 @@ namespace BurgerKiosk
             cbCheese.Checked = false;
             cbSauce.Checked = false;
 
+            this.ActiveControl = rbBurger1;
             UpdateOrder();
             lblTotal.Text = "총 금액: 0원";
+
+            rbBurger1.TabStop = true;
         }
 
         private void rbBurger1_CheckedChanged(object sender, EventArgs e)
@@ -69,6 +79,8 @@ namespace BurgerKiosk
                 lstOrder.Items.Add("+ 소스 : 1,000원");
                 finalAmount += 1000;
             }
+
+            lblTotal.Text = $"총 금액: {finalAmount:N0}원";
         }
 
         private void cbFries_CheckedChanged(object sender, EventArgs e)
@@ -112,21 +124,23 @@ namespace BurgerKiosk
             // 정상 선택된 경우 (에러 메시지 지우기)
             lblError.Text = "";
 
-            // 최종 금액 표시
-            lblTotal.Text = $"총 금액: {finalAmount:N0}원";
+            rbBurger1.TabStop = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            rbBurger1.TabStop = true; // 첫 번째 라디오 버튼이 탭 순서의 시작점이 되도록 설정
             rbBurger1.Checked = false;
             rbBurger2.Checked = false;
             rbBurger3.Checked = false;
-            this.ActiveControl = rbBurger1;
+
 
             // 리스트박스와 금액도 깨끗하게 비우기
             lstOrder.Items.Clear();
             finalAmount = 0;
             lblTotal.Text = "총 금액: 0원";
+
         }
     }
 
